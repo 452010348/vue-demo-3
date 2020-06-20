@@ -1,0 +1,20 @@
+import Vue from 'vue'
+import Vuex from 'vuex'
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
+  state: {
+    is_login:!!window.localStorage.getItem('token'),
+    count: 0
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  }
+});
+
+store.commit('increment')
+console.log( "store.state", store.state )
+
+export default store;
